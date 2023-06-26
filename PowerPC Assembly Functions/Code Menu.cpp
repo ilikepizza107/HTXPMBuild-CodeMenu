@@ -276,9 +276,9 @@ void CodeMenu()
 	//main page
 	vector<Line*> MainLines;
 #if DOLPHIN_BUILD
-	MainLines.push_back(new Comment("ILPM Build Netplay Code Menu", &MENU_TITLE_CHECK_LOCATION));
+	MainLines.push_back(new Comment("HTXPM Build Netplay Code Menu", &MENU_TITLE_CHECK_LOCATION));
 #else
-	MainLines.push_back(new Comment("ILPM Build Code Menu", &MENU_TITLE_CHECK_LOCATION));
+	MainLines.push_back(new Comment("HTXPM Build Code Menu", &MENU_TITLE_CHECK_LOCATION));
 #endif
 
 	MainLines.push_back(new Comment("X = Reset Selection | Y = Reset Page"));
@@ -999,7 +999,7 @@ void ControlCodeMenu()
 	//Prevents Code Menu from booting if it doesn't match a specified string (lol)
 #if BUILD_TYPE == PROJECT_PLUS
 	LoadHalfToReg(Reg1, MENU_TITLE_CHECK_LOCATION + 7 + Line::COMMENT_LINE_TEXT_START);
-	If(Reg1, NOT_EQUAL_I_L, 0x696c); //il
+	If(Reg1, NOT_EQUAL_I_L, 0x7569); //ui
 	{
 		JumpToLabel(NotLoaded);
 	}EndIf();
